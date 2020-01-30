@@ -1,5 +1,6 @@
 from subprocess import call
-import youtube_dl as ud
+import os
+
 if __name__ == "__main__":
     start
 
@@ -28,4 +29,5 @@ def get_movie(url):
     call(movie_info.split(), shell=False)
     hq_fotmat = input("Enter video format: ")
     command = "youtube-dl -f " + hq_fotmat + " " + url + " -c"
+    os.chdir("Downloads")
     call(command.split(), shell=False)
